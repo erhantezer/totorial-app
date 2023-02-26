@@ -28,8 +28,8 @@ useEffect(() => {
 
 if(loading) {
   return (
-      <main>
-        <h2>Loading...</h2>
+      <main className="text-center mt-5">
+        <h2 className="fs-1">Loading...</h2>
       </main>
     )
 }
