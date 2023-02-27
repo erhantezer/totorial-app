@@ -1,21 +1,25 @@
 import { FaEdit } from "react-icons/fa";
 import { useGlobalContext } from "../context";
 import { AiFillDelete } from "react-icons/ai"
+import useEdit from "../hooks/useEdit";
+import useDelete from "../hooks/useDelete";
 
 const TutorialList = () => {
-// const {tutorials} = useGlobalContext()
-    const tutorials = [
-        {
-            id: 1,
-            title: "JS",
-            description: "JS is a programming language",
-        },
-        {
-            id: 2,
-            title: "React",
-            description: "JS library for UI design",
-        },
-    ]
+const {tutorials} = useGlobalContext()
+// const {editTutorial} = useEdit()
+const {deleteTutorial} = useDelete()
+    // const tutorials = [
+    //     {
+    //         id: 1,
+    //         title: "JS",
+    //         description: "JS is a programming language",
+    //     },
+    //     {
+    //         id: 2,
+    //         title: "React",
+    //         description: "JS library for UI design",
+    //     },
+    // ]
 
     return (
         <div className="container mt-4">
@@ -43,12 +47,13 @@ const TutorialList = () => {
                                         size={20}
                                         data-bs-toggle="modal"
                                         data-bs-target="#edit-tutor"
+                                        // onClick={() => editTutorial({ id, title, description })}
                                     />
                                     <AiFillDelete
                                         size={22}
                                         type="button"
                                         className="text-danger "
-                                        
+                                        onClick={() => deleteTutorial(id) }
                                     />
                                 </td>
                             </tr>

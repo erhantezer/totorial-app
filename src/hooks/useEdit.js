@@ -4,10 +4,10 @@ import { useGlobalContext } from "../context";
 
 const useEdit = () => {
 const {tutorials,getTutorials} = useGlobalContext();
-const {id,title,description} = tutorials;
+
     const BASE_URL = "https://tutorial-api.fullstack.clarusway.com/tutorials";
 
-    const editTutorial = async () => {
+    const editTutorial = async ({id,title,description} ) => {
         try {
             await axios.put(`${BASE_URL}/${id}/`, {title, description})
         } catch (error) {
