@@ -6,7 +6,7 @@ const useDelete = () => {
 const {getTutorials} = useGlobalContext()
     const BASE_URL = "https://tutorial-api.fullstack.clarusway.com/tutorials";
 
-    const deleteTutorials = async (id) => {
+    const deleteTutorial = async (id) => {
         try {
             await axios.delete(`${BASE_URL}/${id}/`)
         } catch (error) {
@@ -15,7 +15,7 @@ const {getTutorials} = useGlobalContext()
         getTutorials(); //! database dan sildikten sonra tekrar çağırırız yeniden render edip güncellesin 
     }
 
-    return { deleteTutorials }
+    return { deleteTutorial }
 }
 
 export default useDelete
