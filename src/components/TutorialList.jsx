@@ -1,4 +1,4 @@
-
+import { FaEdit } from "react-icons/fa"
 
 const TutorialList = ({tutorials}) => {
     return (
@@ -14,9 +14,15 @@ const TutorialList = ({tutorials}) => {
                 </thead>
                 <tbody>
                     {tutorials?.map((tutorial) => {
+                        const { id, title, description } = tutorial
                         return (
-                            <tr>
-                                
+                            <tr key={id}>
+                                <th>{id}</th>
+                                <td>{title}</td>
+                                <td>{description}</td>
+                                <td className="text-center text-nowrap">
+                                    <FaEdit/>
+                                </td>
                             </tr>    
                         )
                     })}
