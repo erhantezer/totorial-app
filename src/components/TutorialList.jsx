@@ -1,6 +1,21 @@
 import { FaEdit } from "react-icons/fa"
+import { useGlobalContext } from "../context"
 
-const TutorialList = ({tutorials}) => {
+const TutorialList = () => {
+// const {tutorials} = useGlobalContext()
+    const tutorials = [
+        {
+            id: 1,
+            title: "JS",
+            description: "JS is a programming language",
+        },
+        {
+            id: 2,
+            title: "React",
+            description: "JS library for UI design",
+        },
+    ]
+
     return (
         <div className="container mt-4">
             <table className="table table-striped">
@@ -21,9 +36,9 @@ const TutorialList = ({tutorials}) => {
                                 <td>{title}</td>
                                 <td>{description}</td>
                                 <td className="text-center text-nowrap">
-                                    <FaEdit/>
+                                    <FaEdit />
                                 </td>
-                            </tr>    
+                            </tr>
                         )
                     })}
                 </tbody>

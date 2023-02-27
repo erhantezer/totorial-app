@@ -1,30 +1,11 @@
-import { useEffect, useState } from "react";
+
 import AddTutorial from "../components/AddTutorial"
 import TutorialList from "../components/TutorialList"
-import axios from "axios";
+import { useGlobalContext } from "../context"
 
-const BASE_URL = "https://tutorial-api.fullstack.clarusway.com/tutorials/"
 
 const Home = () => {
-const [tutorials, setTutorials] = useState([]);
-const [loading, setLoading] = useState(false);
-
-const getTutorials = async () => {
-  setLoading(true)
-  try {
-    const {data} = await axios.get(BASE_URL);
-    setTutorials(data)
-    setLoading(false)
-    console.log(data)
-  } catch (error) {
-    console.log(error);
-    setLoading(false)
-  }
-};
-
-useEffect(() => {
-  getTutorials()
-}, []);
+const {loading} = useGlobalContext()
 
 if(loading) {
   return (
@@ -37,7 +18,7 @@ if(loading) {
   return (
     <>
       <AddTutorial/>
-      <TutorialList tutorials={tutorials}/>
+      <TutorialList />
     </>
   )
 }
