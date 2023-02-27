@@ -1,5 +1,6 @@
-import { FaEdit } from "react-icons/fa"
-import { useGlobalContext } from "../context"
+import { FaEdit } from "react-icons/fa";
+import { useGlobalContext } from "../context";
+import { AiFillDelete } from "react-icons/ai"
 
 const TutorialList = () => {
 // const {tutorials} = useGlobalContext()
@@ -42,6 +43,12 @@ const TutorialList = () => {
                                         size={20}
                                         data-bs-toggle="modal"
                                         data-bs-target="#edit-tutor"
+                                    />
+                                    <AiFillDelete
+                                        size={22}
+                                        type="button"
+                                        className="text-danger "
+                                        
                                     />
                                 </td>
                             </tr>
