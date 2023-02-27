@@ -36,7 +36,13 @@ const TutorialList = () => {
                                 <td>{title}</td>
                                 <td>{description}</td>
                                 <td className="text-center text-nowrap">
-                                    <FaEdit />
+                                    <FaEdit 
+                                        className="me-2 text-warning"
+                                        type="button"
+                                        size={20}
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#edit-tutor"
+                                    />
                                 </td>
                             </tr>
                         )
