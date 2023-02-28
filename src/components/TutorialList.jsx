@@ -3,8 +3,11 @@ import { useGlobalContext } from "../context";
 import { AiFillDelete } from "react-icons/ai"
 import useEdit from "../hooks/useEdit";
 import useDelete from "../hooks/useDelete";
+import { useState } from "react/cjs/react.production.min";
+import EditTutorial from "./EditTutorial";
 
 const TutorialList = () => {
+const [edit, setEdit] = useState("")
 const {tutorials} = useGlobalContext()
 // const {editTutorial} = useEdit()
 const {deleteTutorial} = useDelete()
@@ -47,7 +50,7 @@ const {deleteTutorial} = useDelete()
                                         size={20}
                                         data-bs-toggle="modal"
                                         data-bs-target="#edit-tutor"
-                                        // onClick={() => editTutorial({ id, title, description })}
+                                        onClick={() => setEdit(tutorial)}
                                     />
                                     <AiFillDelete
                                         size={22}
@@ -61,6 +64,7 @@ const {deleteTutorial} = useDelete()
                     })}
                 </tbody>
             </table>
+            <EditTutorial {...edit} />
         </div>
     )
 }
