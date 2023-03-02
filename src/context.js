@@ -1,14 +1,10 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 
-
-
 const AppContext = createContext();
-
 export const useGlobalContext = () => {
     return useContext(AppContext);
 }
-
 const BASE_URL = "https://tutorial-api.fullstack.clarusway.com/tutorials/"
 
 export const AppProvider = ({ children }) => {
@@ -31,8 +27,6 @@ export const AppProvider = ({ children }) => {
     useEffect(() => {
         getTutorials()
     }, []);
-
-
 
     return (
         <AppContext.Provider value={{ tutorials, getTutorials, loading }}>
