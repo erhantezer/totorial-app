@@ -4,16 +4,16 @@ const useAdd = () => {
 
     const BASE_URL = "https://tutorial-api.fullstack.clarusway.com/tutorials";
 
-    const postTutorial = async ({ }) => {
+    const addTutorial = async (tutor) => {
 
         try {
-            await axios.post(BASE_URL, {})
+            await axios.post(BASE_URL, tutor)
         } catch (error) {
             console.log(error)
         }
     }
 
-    return { postTutorial }
+    return { addTutorial }
 }
 
 export default useAdd

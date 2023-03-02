@@ -1,6 +1,6 @@
 
 
-const EditTutorial = () => {
+const EditTutorial = ({ id, title, description }) => {
     return (
         <div>EditTutorial</div>
     )

@@ -1,28 +1,17 @@
 import { FaEdit } from "react-icons/fa";
 import { useGlobalContext } from "../context";
 import { AiFillDelete } from "react-icons/ai"
-import useEdit from "../hooks/useEdit";
+// import useEdit from "../hooks/useEdit";
 import useDelete from "../hooks/useDelete";
-import { useState } from "react/cjs/react.production.min";
+import {useState} from "react"
 import EditTutorial from "./EditTutorial";
 
 const TutorialList = () => {
-const [edit, setEdit] = useState("")
-const {tutorials} = useGlobalContext()
-// const {editTutorial} = useEdit()
-const {deleteTutorial} = useDelete()
-    // const tutorials = [
-    //     {
-    //         id: 1,
-    //         title: "JS",
-    //         description: "JS is a programming language",
-    //     },
-    //     {
-    //         id: 2,
-    //         title: "React",
-    //         description: "JS library for UI design",
-    //     },
-    // ]
+    const [edit, setEdit] = useState("")
+    const { tutorials } = useGlobalContext()
+    // const {editTutorial} = useEdit()
+    const { deleteTutorial } = useDelete()
+
 
     return (
         <div className="container mt-4">
@@ -44,7 +33,7 @@ const {deleteTutorial} = useDelete()
                                 <td>{title}</td>
                                 <td>{description}</td>
                                 <td className="text-center text-nowrap">
-                                    <FaEdit 
+                                    <FaEdit
                                         className="me-2 text-warning"
                                         type="button"
                                         size={20}
@@ -56,7 +45,7 @@ const {deleteTutorial} = useDelete()
                                         size={22}
                                         type="button"
                                         className="text-danger "
-                                        onClick={() => deleteTutorial(id) }
+                                        onClick={() => deleteTutorial(id)}
                                     />
                                 </td>
                             </tr>
