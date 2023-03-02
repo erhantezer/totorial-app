@@ -1,7 +1,6 @@
 import { FaEdit } from "react-icons/fa";
 import { useGlobalContext } from "../context";
 import { AiFillDelete } from "react-icons/ai"
-// import useEdit from "../hooks/useEdit";
 import useDelete from "../hooks/useDelete";
 import {useState} from "react"
 import EditTutorial from "./EditTutorial";
@@ -9,7 +8,6 @@ import EditTutorial from "./EditTutorial";
 const TutorialList = () => {
     const [edit, setEdit] = useState("")
     const { tutorials } = useGlobalContext()
-    // const {editTutorial} = useEdit()
     const { deleteTutorial } = useDelete()
 
 
