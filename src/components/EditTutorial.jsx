@@ -2,7 +2,7 @@
 
 const EditTutorial = ({ id, title, description }) => {
     return (
-        <div>{title} {description}</div>
+        <div>{id} {title} {description}</div>
     )
 }
 
