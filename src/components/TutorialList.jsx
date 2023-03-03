@@ -36,7 +36,7 @@ const TutorialList = () => {
                                         type="button"
                                         size={20}
                                         data-bs-toggle="modal"
-                                        data-bs-target="#edit-tutor"
+                                        data-bs-target="#edit-modal"
                                         onClick={() => setEdit(tutorial)}
                                     />
                                     <AiFillDelete

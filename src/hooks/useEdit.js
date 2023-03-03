@@ -3,7 +3,7 @@ import { useGlobalContext } from "../context";
 
 
 const useEdit = () => {
-const {tutorials,getTutorials} = useGlobalContext();
+const {getTutorials} = useGlobalContext();
 
     const BASE_URL = "https://tutorial-api.fullstack.clarusway.com/tutorials";
 
